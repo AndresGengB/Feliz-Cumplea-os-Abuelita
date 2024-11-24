@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Abuelita!</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #ffe0b2);
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: #e0f7fa; }
+    100% { background: #ffe0b2; }
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #5a5a5a;
+}
+
+.header-decoration {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #ff6699, #ffcc00);
+    position: absolute;
+    bottom: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.message {
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1s ease-out;
+}
+
+.card h2 {
+    color: #ff6f61;
+}
+
+.card p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.cake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.cake-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.cake-layer {
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    border: 2px solid #fff;
+}
+
+
+    .layer1 {
+    background-color: #ff9999;
+    height: 50px;
+    top: 0;
+    animation: layerPulse 2s infinite alternate;
+}
+
+.layer2 {
+    background-color: #ffcc99;
+    height: 50px;
+    top: 50px;
+    animation: layerPulse 2s infinite alternate 0.5s;
+}
+
+.layer3 {
+    background-color: #ffff99;
+    height: 50px;
+    top: 100px;
+    animation: layerPulse 2s infinite alternate 1s;
+}
+
+.layer4 {
+    background-color: #99ff99;
+    height: 50px;
+    top: 150px;
+    animation: layerPulse 2s infinite alternate 1.5s;
+}
+
+@keyframes layerPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.candles {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.candle {
+    width: 10px;
+    height: 30px;
+    background-color: #ffcc00;
+    margin: 0 5px;
+    position: relative;
+    border-radius: 5px;
+    animation: candleFlicker 0.1s infinite alternate;
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #ff4500;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff4500;
+}
+
+@keyframes candleFlicker {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.8; transform: scale(0.95); }
+}
+
+.sprinkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sprinkles::before,
+.sprinkles::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ff1493;
+    animation: sprinklesFall 2s linear infinite;
+}
+
+.sprinkles::before {
+    left: 20%;
+    top: -10px;
+    animation-delay: 0.5s;
+}
+
+.sprinkles::after {
+    right: 20%;
+    top: -10px;
+    background-color: #00bfff;
+}
+
+@keyframes sprinklesFall {
+    0% { 
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.balloons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.balloon {
+    width: 70px;
+    height: 90px;
+    background-color: transparent;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    margin: 0 15px;
+    transform-origin: bottom center;
+    animation: balloonFloat 3s ease-in-out infinite;
+}
+
+.balloon:nth-child(1) { background-color: #ff6b6b; animation-delay: -0.5s; }
+.balloon:nth-child(2) { background-color: #4ecdc4; animation-delay: -1s; }
+.balloon:nth-child(3) { background-color: #45b7d1; animation-delay: -1.5s; }
+.balloon:nth-child(4) { background-color: #f9d5e5; animation-delay: -2s; }
+.balloon:nth-child(5) { background-color: #eeac99; animation-delay: -2.5s; }
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+@keyframes balloonFloat {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+footer {
+    background-color: rgba(255,204,0,0.8);
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>¡Feliz Cumpleaños, Abuelita!</h1>
+        <div class="header-decoration"></div>
+    </header>
+    <main>
+        <section class="message">
+            <div class="card">
+                <h2>Querida Abuelita</h2>
+                <p>En este día tan especial, queremos desearte un muy feliz cumpleaños. Eres una luz en nuestras vidas y te amamos muchísimo. ¡Que todos tus deseos se hagan realidad!</p>
+            </div>
+        </section>
+        <section class="cake">
+            <div class="cake-container">
+                <div class="cake-layer layer1"></div>
+                <div class="cake-layer layer2"></div>
+                <div class="cake-layer layer3"></div>
+                <div class="cake-layer layer4"></div>
+                <div class="candles">
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                </div>
+                <div class="sprinkles"></div>
+            </div>
+        </section>
+        <section class="balloons">
+            <div class="balloon" style="--i:0;"></div>
+            <div class="balloon" style="--i:1;"></div>
+            <div class="balloon" style="--i:2;"></div>
+            <div class="balloon" style="--i:3;"></div>
+            <div class="balloon" style="--i:4;"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Con todo nuestro amor, tu familia.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const candles = document.querySelectorAll('.candle');
+    
+    candles.forEach(candle => {
+        candle.addEventListener('click', () => {
+            candle.classList.toggle('blown-out');
+        });
+    });
+
+    // Confeti al hacer clic en el pastel
+    const cake = document.querySelector('.cake-container');
+    cake.addEventListener('click', createConfeti);
+
+    function createConfeti() {
+        for(let i = 0; i < 50; i++) {
+            const confeti = document.createElement('div');
+            confeti.classList.add('confeti');
+            confeti.style.left = Math.random() * window.innerWidth + 'px';
+            confeti.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(confeti);
+
+            setTimeout(() => {
+                confeti.remove();
+            }, 3000);
+        }
+    }
+});
+    </script>
+</body>
+</html>
